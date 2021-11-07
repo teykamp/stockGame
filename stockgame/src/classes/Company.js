@@ -1,7 +1,8 @@
 export default class Company {
-    constructor(id, name, relatedIndustries, initialStockPrice) {
+    constructor(id, name, ticker, relatedIndustries, initialStockPrice) {
         this.id = id;
         this.name = name;
+        this.ticker = ticker;
         this.relatedIndustries = relatedIndustries;
         this.stockPrice = [initialStockPrice];
     }
