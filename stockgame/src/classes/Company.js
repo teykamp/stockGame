@@ -5,6 +5,7 @@ export default class Company {
         this.ticker = ticker;
         this.relatedIndustries = relatedIndustries;
         this.stockPrice = [initialStockPrice];
+        this.stocksOwned = 0; // make check to not be below 0
     }
 
     getID() {

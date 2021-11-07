@@ -1,12 +1,12 @@
 <template>
   	<div id="app">
 		<div v-for="company in currentCompaniesList" :key="company.id">
-    		<Company v-bind="company" />
+    		<Company :company="company" />
 		</div>
-		<div v-for="event in currentEventsList" :key="event.id">
-			<Event v-bind="events" />
+		<div v-for="events in currentEventsList" :key="events.id">
+			<Event :events="events" />
 		</div>
-		<PlayerControls v-bind="playerScore" />
+		<PlayerControls :playerScore="playerScore" :playerDollars="playerDollars" />
   	</div>
 </template>
 
@@ -34,6 +34,7 @@ export default {
 			currentPositiveIndustries: [],
 			currentNegativeIndustries: [],
 			playerScore: 0,
+			playerDollars: 0,
 		}
 	},
 	methods: {

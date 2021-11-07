@@ -1,8 +1,9 @@
 <template>
 	<div>
-        <div>
-            {{playerScore}}
-        </div>
+        <h1>
+            Score: {{playerScore}}
+            Money: {{playerDollars}}
+        </h1>
     </div>
 </template>
 
@@ -11,6 +12,7 @@ export default {
     name: 'PlayerControls',
     props: {
         playerScore,
+        playerDollars,
     }
 }
 </script>
