@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import Company from '../classes/Company.js'
+import Event from '../classes/Event.js'
 import HelloWorld from './components/HelloWorld.vue'
 
 export default {
