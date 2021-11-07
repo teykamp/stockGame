@@ -1,8 +1,10 @@
 export default class Event {
-    constructor(id, headLine, affectedIndustries) {
+    constructor(id, headLine, positiveAffectedIndustries, negativeAffectedIndustries, timeRemaining) {
         this.id = id;
         this.headLine = headLine;
-        this.affectedIndustries = affectedIndustries;
+        this.positiveAffectedIndustries = positiveAffectedIndustries;
+        this.negativeAffectedIndustries = negativeAffectedIndustries;
+        this.timeRemaining = timeRemaining;
     }
 
     getID() {
