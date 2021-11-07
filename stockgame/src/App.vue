@@ -6,6 +6,7 @@
 		<div v-for="event in currentEventsList" :key="event.id">
 			<Event v-bind="events" />
 		</div>
+		<PlayerControls v-bind="playerScore" />
   	</div>
 </template>
 
@@ -14,12 +15,14 @@ import CompanyObj from '../classes/Company.js'
 import EventObj from '../classes/Event.js'
 import Company from './components/Company.vue'
 import Event from './components/Event.vue'
+import PlayerControls from './components/PlayerControls.vue'
 
 export default {
   	name: 'App',
   	components: {
     	Company,
 		Event,
+		PlayerControls,
   	},
 	data() {
 		return {
@@ -30,6 +33,7 @@ export default {
 			currentEventsList: [],
 			currentPositiveIndustries: [],
 			currentNegativeIndustries: [],
+			playerScore: 0,
 		}
 	},
 	methods: {

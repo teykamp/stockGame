@@ -23,7 +23,7 @@ export default {
 		}
 	},
 	methods: {
-		updateChart() {
+		updateChart() { // https://www.chartjs.org/docs/latest/getting-started/usage.html
 			this.xAxisValues.push(this.xAxisValues.length)
 			const ctx = document.getElementById("graph").getContext("2d");
 			const graph = new Chart(ctx, {
@@ -39,7 +39,7 @@ export default {
 					}]
 				},
 			});
-		}
+		},
 	},
 	mounted() {
 		// update every x seconds
