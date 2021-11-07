@@ -1,0 +1,132 @@
+[
+    {
+    "name":"1-800-Lawyers",
+    "industry":["legal"],
+    "ticker": "LAW"
+    },
+    {
+    "name":"Triangle Airlines",
+    "industry":["transport"],
+    "ticker": "TRI"
+    },
+    {
+    "name":"BigBrother Reconacence",
+    "industry":["tech","defense"],
+    "ticker": "BRO"
+    },
+    {
+    "name":"Johnson In Johnson",
+    "industry":["chemicals"],
+    "ticker": "JOHN"
+    },
+    {
+    "name":"HeadShot Labs",
+    "industry":["defense","mining"],
+    "ticker": "SHOT"
+    },
+    {
+    "name":"Black Hole Drilling Co",
+    "industry":["energy"],
+    "ticker": "HOLE"
+    },
+    {
+    "name":"HealthCure",
+    "industry":["healthcare"],
+    "ticker": "CURE"
+    },
+    {
+    "name":"DaBeers",
+    "industry":["restaurant", "agriculture"],
+    "ticker": "BEER"
+    },
+    {
+    "name":"Black Mist",
+    "industry":["energy"],
+    "ticker": "BLM"
+    },
+    {
+    "name":"Painless Prescriptions",
+    "industry":["pharma"],
+    "ticker": "PAIN"
+    },
+    {
+    "name":"Harpoon Gaming",
+    "industry":["entertainment"],
+    "ticker": "HARP"
+    },
+    {
+    "name":"ExOnMobile",
+    "industry":["tech"],
+    "ticker": "EOM"
+    },
+    {
+    "name":"One Night Stand",
+    "industry":["tech"],
+    "ticker": "NITE"
+    },
+    {
+    "name":"Gecko",
+    "industry":["insurance"],
+    "ticker": "GCKO"
+    },
+    {
+    "name":"MothBite",
+    "industry":["garments"],
+    "ticker": "MOTH"
+    },
+    {
+    "name":"Beyond Broke",
+    "industry":["finance"],
+    "ticker": "BROK"
+    },
+    {
+    "name":"Lease'd Expensive",
+    "industry":["transport"],
+    "ticker": "LSD"
+    },
+    {
+    "name":"Offshore Accounting",
+    "industry":["finance"],
+    "ticker": "OFF"
+    },
+    {
+    "name":"OnlyFriends",
+    "industry":["entertainment","tech"],
+    "ticker": "ONLY"
+    },
+    {
+    "name":"Cracked Rock Shale",
+    "industry":["energy"],
+    "ticker": "ROCK"
+    },
+    {
+    "name":"Red Diamond",
+    "industry":["mining"],
+    "ticker": "RED"
+    },
+    {
+    "name":"Mil-due Farms",
+    "industry":["agriculture"],
+    "ticker": "FARM"
+    },
+    {
+    "name":"Futile Investments",
+    "industry":["finance"],
+    "ticker": "FTI"
+    },
+    {
+    "name":"GroudBreaking Construction",
+    "industry":["construction"],
+    "ticker": "GBC"
+    },
+    {
+    "name":"Royal Burger",
+    "industry":["restaurant"],
+    "ticker": "ROY"
+    },
+    {
+    "name":"Double Arch",
+    "industry":["restaurant"],
+    "ticker": "DUB"
+    }
+]
