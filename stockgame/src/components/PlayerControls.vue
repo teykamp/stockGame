@@ -1,5 +1,5 @@
 <template>
-	<div>
+    <div>
         <h1>
             Score: {{playerScore}}
             Money: {{playerDollars}}
