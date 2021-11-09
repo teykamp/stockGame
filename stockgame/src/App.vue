@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import CompanyObj from '../classes/Company.js'
-import EventObj from '../classes/Event.js'
+// import CompanyObj from '../classes/Company.js'
+// import EventObj from '../classes/Event.js'
 import Company from './components/Company.vue'
 import Event from './components/Event.vue'
 import PlayerControls from './components/PlayerControls.vue'
@@ -49,11 +49,12 @@ export default {
         },
 
         updateGameState() {
-            
-            for (company in this.currentCompaniesList) {
+            for (let i = 0; i < this.currentCompaniesList.length; i++) {
+                let company = this.currentCompaniesList[i];
                 this.checkUpdateMarket(company); // adding/removing market
-                // check if compnay added
-                for (industry in this.company.relatedIndustries) {
+                // check if company added
+                for (let j = 0; j < company.relatedIndustries.length; j++) {
+                    let industry = company.relatedIndustries[j];
                     if (this.currentPositiveIndustries.includes(industry)) {
                         company.stockFluctuate(/* get value from somewhere */);
                     }
