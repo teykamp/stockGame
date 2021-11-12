@@ -8,6 +8,8 @@ export default class Company {
         this.stocksOwned = 0; // make check to not be below 0
     }
 
+    
+
     getID() {
         return this.id;
     }
