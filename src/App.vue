@@ -1,5 +1,6 @@
 <template>
     <div id="app">
+        <Event ref="CallEvent" />
         <p><b>Year: {{ year }}, Time Elapsed: {{ clockTick }}</b></p>
         <p><b>TOTAL: ${{ (playerDollars + totalEquity).toFixed(2) }}</b></p>
         <p>Liquidity: ${{ playerDollars.toFixed(2) }}</p>
@@ -11,8 +12,8 @@
                 <button v-if="company.stocksOwned > 0" @click="stockSale(company, false)">Sell</button>
             </p>
             <p>Shares: {{ company.stocksOwned }}, Equity: ${{ (company.stocksOwned * company.stockPrice).toFixed(2) }}</p>
-            
-        </div>
+    
+    </div>
 
         <!-- <div v-for="industry in industries" :key="industry.id">
             <p>
@@ -20,58 +21,36 @@
             </p>
         </div> -->
 
-        <div v-for="events in activeEvents" :key="events.id">
-            <p> {{ events.headLine }} ({{ events.year }})</p>
-        </div>
+        
     </div>
 </template>
 
 <script>
 import CompanyObj from './classes/Company.js'
-import EventObj from './classes/Event.js'
 import companies from './assets/companies.json'
-import events from './assets/events.json'
+import industries from './assets/industries.json'
 // import Company from './components/Company.vue'
-// import Event from './components/Event.vue'
+import Event from './components/Event.vue'
 // import PlayerControls from './components/PlayerControls.vue'
 
 export default {
       name: 'App',
-    //   components: {
+      components: {
     //     Company,
-    //     Event,
+        Event
     //     PlayerControls,
-    //   },
+      },
     data() {
         return {
             globID: 0,
             year: 2021,
             clockTick: 0,
             companyList: [],
-            eventList: [],
-            activeEvents: [],
             currentCompaniesList: [],
-            currentPositiveIndustries: [],
-            currentNegativeIndustries: [],
             totalEquity: 0,
             playerDollars: 100, // initial starting balance
-            industries: [
-                {"name": "entertainment", "val": 1, "instance": 0}, 
-                {"name": "mining", "val": 1, "instance": 0}, 
-                {"name": "tech", "val": 1, "instance": 0}, 
-                {"name": "energy", "val": 1, "instance": 0},
-                {"name": "garments", "val": 1, "instance": 0}, 
-                {"name": "chemicals", "val": 1, "instance": 0}, 
-                {"name": "pharma", "val": 1, "instance": 0},
-                {"name": "agriculture", "val": 1, "instance": 0}, 
-                {"name": "healthcare", "val": 1, "instance": 0}, 
-                {"name": "legal", "val": 1, "instance": 0},
-                {"name": "insurance", "val": 1, "instance": 0}, 
-                {"name": "finance", "val": 1, "instance": 0}, 
-                {"name": "transport", "val": 1, "instance": 0},
-                {"name": "construction", "val": 1, "instance": 0}, 
-                {"name": "restaurant", "val": 1, "instance": 0}, 
-                {"name": "defense", "val": 1, "instance": 0}]
+            industries: industries // assigns content of industries.json to the key 'industries'
+            
         }
     },
     methods: {
@@ -99,58 +78,16 @@ export default {
         stockFluctuate(company, flux) {
             company.stockPrice *= flux;
         },
-        addEvent() {
-
-            let currentEvent = this.eventList[0];
-            currentEvent.year = this.year;
-            this.eventList.splice(0, 1);
-            this.activeEvents.splice(0, 0, currentEvent);
-            this.computeEffects(currentEvent);
-          
-        },
-        computeEffects(eventObject) {
-
-            for (let i = 0; i < eventObject.positiveAffectedIndustries.length; i++) {
-
-                let eventInstancePos = eventObject.positiveAffectedIndustries[i].split(' ');
-
-                for (let j = 0; j < this.industries.length; j++) {
-
-                    if (eventInstancePos[0] === this.industries[j].name) {
-
-                        for (let k = 0; k < parseInt(eventInstancePos[1]); k++) {
-
-                            this.industries[j].val *= 1.001005 // .105% flux up
-                            this.industries[j].instance++;
-                        }
-                    }
-                }
-            }
-            for (let i = 0; i < eventObject.negativeAffectedIndustries.length; i++) {
-
-                let eventInstanceNeg = eventObject.negativeAffectedIndustries[i].split(' ');
-
-                for (let j = 0; j < this.industries.length; j++) {
-
-                    if (eventInstanceNeg[0] === this.industries[j].name) {
-
-                        for (let k = 0; k < parseInt(eventInstanceNeg[1]); k++) {
-
-                            this.industries[j].val *= 0.999 // .1% flux down
-                            this.industries[j].instance--;
-                        }
-                    }
-                }
-            }
-        },
+        
         clock() { // central game clock
             
-            if (this.eventList.length === 0) this.initEvents()
             
-            this.eventList.sort(() => 0.5 - Math.random())
-
-            if (this.clockTick % 10 === 0) this.year++;
-            if (this.clockTick % 5 === 0) this.addEvent();
+            
+            if (this.clockTick % 10 === 0) {
+                this.year++;
+                this.$refs.CallEvent.year++;
+            }
+            if (this.clockTick % 5 === 0) this.$refs.CallEvent.triggerEvent();
             if (this.clockTick % 1 === 0) {
                 this.updateGameState();
                 this.playerBalance();
@@ -177,21 +114,6 @@ export default {
                 this.globID++;
             }
         },
-
-        initEvents() {
-            
-            for (let i = 0; i < events.length; i++) {
-                
-                let tempEvent = new EventObj(
-                    this.globID, events[i].title, 
-                    events[i].effects[0].positiveIndustries, 
-                    events[i].effects[0].negativeIndustries
-                    );
-                this.eventList.push(tempEvent)
-                this.globID++;
-            }
-        },
-
         updateGameState() {
             
             for (let i = 0; i < this.currentCompaniesList.length; i++) {

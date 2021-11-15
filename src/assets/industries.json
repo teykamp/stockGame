@@ -1,0 +1,18 @@
+[
+    {"name": "entertainment", "val": 1, "instance": 0}, 
+    {"name": "mining", "val": 1, "instance": 0}, 
+    {"name": "tech", "val": 1, "instance": 0}, 
+    {"name": "energy", "val": 1, "instance": 0},
+    {"name": "garments", "val": 1, "instance": 0}, 
+    {"name": "chemicals", "val": 1, "instance": 0}, 
+    {"name": "pharma", "val": 1, "instance": 0},
+    {"name": "agriculture", "val": 1, "instance": 0}, 
+    {"name": "healthcare", "val": 1, "instance": 0}, 
+    {"name": "legal", "val": 1, "instance": 0},
+    {"name": "insurance", "val": 1, "instance": 0}, 
+    {"name": "finance", "val": 1, "instance": 0}, 
+    {"name": "transport", "val": 1, "instance": 0},
+    {"name": "construction", "val": 1, "instance": 0}, 
+    {"name": "restaurant", "val": 1, "instance": 0}, 
+    {"name": "defense", "val": 1, "instance": 0}
+]

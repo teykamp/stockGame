@@ -1,0 +1,320 @@
+[
+    {
+    "title":"The Holidays Are Approaching and Consumer Spending is Going up",
+    "effects":[{
+        "positiveIndustries":["gaments 3", "tech 2", "entertainment 2", "finance 2", "restaurant 2", "energy 2", "agriculture 1", "transport 3"],
+        "negativeIndustries":[]
+    }]
+    },
+
+    {
+    "title":"As work days increase in length, working parents opt to go out to eat more",
+    "effects":[{
+        "positiveIndustries":["restaurant 2"],
+        "negativeIndustries":["entertainment 2"]
+    }]
+    },
+
+    {
+    "title":"Leaked military documents cause public outcry, culminating in mounting political pressure to withdraw from armed conflicts around the world",
+    "effects":[{
+        "positiveIndustries":[],
+        "negativeIndustries":["defense 4"]
+    }]
+    },
+
+    {
+    "title":"Financial regulation passed in the house, capping the interest payday lenders can charge to clients",
+    "effects":[{
+        "positiveIndustries":[],
+        "negativeIndustries":["finance 2"]
+    }]
+    },
+
+    {
+    "title":"OnlyFriends releases new service optimizing the way creators target ads to fan base",
+    "effects":[{
+        "positiveIndustries":["tech 1", "entertainment 2"],
+        "negativeIndustries":[]
+    }]
+    },
+
+    {
+    "title":"Farmers report good harvest season",
+    "effects":[{
+        "positiveIndustries":["restaurant 0", "agriculture 3"],
+        "negativeIndustries":[]
+    }]
+    },
+    {
+    "title":"Bangladeshi authorities crack down on underage workers in garment factories",
+    "effects":[{
+        "positiveIndustries":[],
+        "negativeIndustries":["garments 2"]
+    }]
+    }, 
+
+    {
+    "title":"A disease infecting livestock living in CAFOs decimates meat production",
+    "effects":[{
+        "positiveIndustries":[],
+        "negativeIndustries":["restaurant 2", "agriculture 3"]
+    }]
+    },
+
+    {
+    "title":"ExOnMobile powered by BigBrother Recon makes stalking easier than it's ever been, for a price of course!",
+    "effects":[{
+        "positiveIndustries":["tech 2"],
+        "negativeIndustries":[]
+    }]
+    },  
+
+    {
+    "title":"CrackedRockShale starts drilling on indigenous burial grounds, regulators aren’t intervening",
+    "effects":[{
+        "positiveIndustries":["energy 3", "construction 2", "chemicals 1"],
+        "negativeIndustries":[]
+    }] 
+    },
+
+    {
+    "title":"Feds lower interest rate, average per capita debt goes up 12%",
+    "effects":[{
+        "positiveIndustries":["finance 3", "restaurant 1", "entertainment 1", "construction 1", "transport 1", "gaments 2"],
+        "negativeIndustries":[]
+    }]
+    },
+
+    {
+    "title":"Outcry: Greedy develors to blame for the deaths of 15 construction workers. Will unionization efforts finally take hold?",
+    "effects":[{
+        "positiveIndustries":["legal 1"],
+        "negativeIndustries":["construction 2", "insurance 1"]
+    }]
+    },
+
+    {
+    "title":"Sitting is the new smoking: Doctors report increased health concerns with the modern sedentary lifestyle",
+    "effects":[{
+        "positiveIndustries":["healthcare 2", "pharma 1"],
+        "negativeIndustries":[]
+    }]
+    },
+
+    {
+    "title":"Its fashion season, MothBite garments are on sale!",
+    "effects":[{
+        "positiveIndustries":["gaments 3"],
+        "negativeIndustries":["entertainment 1"]
+    }]
+    },
+
+    {
+    "title":"Antibiotic resistance causes real concern as medical industry left blind sighted",
+    "effects":[{
+        "positiveIndustries":[],
+        "negativeIndustries":["pharma 3", "insurance 1", "agriculture 1"]
+    }]
+    },
+
+    {
+    "title":"Government incentives lead to increased number of homes retrofitted with solar panels",
+    "effects":[{
+        "positiveIndustries":["insurance 2", "finance 2", "mining 1"],
+        "negativeIndustries":["energy 1"]
+    }]
+    },
+
+    {
+    "title":"Big cities make big investments in rail, metro systems",
+    "effects":[{
+        "positiveIndustries":["construction 3", "finance 1", "mining 1", "insurance 3"],
+        "negativeIndustries":["transport 1", "energy 1"]
+    }]
+    },
+
+    {
+    "title":"Pink slime? Gross! Fast food industry facing backlash after whistleblower exposes the ingredients behind the ‘food’ being served",
+    "effects":[{
+        "positiveIndustries":["insurance 1"],
+        "negativeIndustries":["restaurant 4", "healthcare 1"]
+    }]
+    },
+
+    {
+    "title":"Gaming or Gambling? Same thing according to the FTC!",
+    "effects":[{
+        "positiveIndustries":["entertainment 2"],
+        "negativeIndustries":["legal 1"]
+    }]
+    },
+
+    {
+    "title":"Executive order just signed allows multi national corporations to seize land they want to develop using eminent domain",
+    "effects":[{
+        "positiveIndustries":["energy 2", "construction 3", "finance 1"],
+        "negativeIndustries":[]
+    }]
+    },
+
+    {
+    "title":"Government begins setting quota for affordable housing",
+    "effects":[{
+        "positiveIndustries":["energy 1"],
+        "negativeIndustries":["construction 2"]
+    }]
+    },
+
+    {
+    "title":"Breakthrough in Genetically modified foods. Doubles harvest of corn",
+    "effects":[{
+        "positiveIndustries":["agriculture 3", "restaurant 2"],
+        "negativeIndustries":["chemicals 2"]
+    }]
+    },
+
+    {
+    "title":"Oil refinery spills huge quantities of oil, ecologists reporting flammable watersheds",
+    "effects":[{
+        "positiveIndustries":["healthcare 1", "chemicals 1"],
+        "negativeIndustries":["energy 2", "agriculture 3"]
+    }]
+    },
+
+    {
+    "title":"Hospitals going out of pocket to pay for larger beds to accommodate obese patients",
+    "effects":[{
+        "positiveIndustries":["pharma 1", "restaurant 1"],
+        "negativeIndustries":["healthcare 2", "insurance 1"]
+    }]
+    },
+
+    {
+    "title":"Cyber attack brings critical infrastructure to a halt",
+    "effects":[{
+        "positiveIndustries":["defense 1"],
+        "negativeIndustries":["insurance 1", "energy 1", "construction 2", "tech 3"]
+    }]
+    },
+
+    {
+    "title":"Industry Boom! Multi Level marketing on the rise, targeting those that wish to live the American dream",
+    "effects":[{
+        "positiveIndustries":["garments 2", "pharma 1"],
+        "negativeIndustries":["entertainment 1", "finance 1"]
+    }]
+    },
+
+    {
+    "title":"Markets hit all time lows, retirement funds wiped out",
+    "effects":[{
+        "positiveIndustries":[],
+        "negativeIndustries":["finance 3", "tech 1", "entertainment 2", "legal 2", "transport 1", "mining 2", "construction 2"]
+    }]
+    },
+
+    {
+    "title":"Public concerned with privacy as ExOnMobile & OnlyFriends update user agreement",
+    "effects":[{
+        "positiveIndustries":[],
+        "negativeIndustries":["tech 2"]
+    }]
+    },
+
+    {
+    "title":"MSM reports terrorism on the rise, national security raised to public agenda #1",
+    "effects":[{
+        "positiveIndustries":["defense 1"],
+        "negativeIndustries":[]
+    }]
+    },
+
+    {
+    "title":"CryptoCurrency surges, financial institutions caught off guard",
+    "effects":[{
+        "positiveIndustries":[],
+        "negativeIndustries":["finance 2"]
+    }]
+    },
+
+    {
+    "title":"Trade war has sparked between US and China, worst in history",
+    "effects":[{
+        "positiveIndustries":["defense 1"],
+        "negativeIndustries":[]
+    }]
+    },
+
+    {
+    "title":"Conspiracy Uncovered: Auto manufacturers working with insurance industry to make drivers more likely to die in crashes because 'it's easier to dispute premiums with the dead'",
+    "effects":[{
+        "positiveIndustries":["legal 2"],
+        "negativeIndustries":["insurance 3", "transport 2"]
+    }]
+    },
+
+    {
+    "title":"Racial Justice Activists: 'A Racial Reckoning is Coming'",
+    "effects":[{
+        "positiveIndustries":["defense 1", "tech 1"],
+        "negativeIndustries":[]
+    }]
+    },
+
+    {
+    "title":"University Endowments Grow as Student Debt Continues to Rise",
+    "effects":[{
+        "positiveIndustries":["finance 1"],
+        "negativeIndustries":["entertainment 1", "restaurant 1"]
+    }]
+    },
+
+    {
+    "title":"Teachers Union Begins Strike Demanding Higher Wages, Schools Across The Country No Longer In Session",
+    "effects":[{
+        "positiveIndustries":[],
+        "negativeIndustries":[]
+    }]
+    },
+
+    {
+    "title":"Power Outages Rock The Grid Revealing Instability in Core Infrastructure",
+    "effects":[{
+        "positiveIndustries":[],
+        "negativeIndustries":["entertainment 1", "finance 2", "construction 1", "energy 2"]
+    }]
+    },
+
+    {
+    "title":"Winter is Here: Frozen Pipes Hit Residential Areas Hardest",
+    "effects":[{
+        "positiveIndustries":["chemicals 1"],
+        "negativeIndustries":["insurance 1", "energy 1"]
+    }]
+    },
+
+    {
+    "title":"Vamos A La Plastic- Environmental Surveys Finds Record Amount of Plastics Washed Up On Beaches",
+    "effects":[{
+        "positiveIndustries":[],
+        "negativeIndustries":["chemicals 1"]
+    }]
+    },
+
+    {
+    "title":"DoubleArches CEO Michael Greenbrook Just Got Served… With Divorce Papers",
+    "effects":[{
+        "positiveIndustries":["entertainment 1"],
+        "negativeIndustries":[]
+    }]
+    },
+
+    {
+    "title":"Prohibition 2.0? Moms Declare War On Alcohol!",
+    "effects":[{
+        "positiveIndustries":["insurance 2"],
+        "negativeIndustries":["restaurant 1"]
+    }]
+    }
+]
