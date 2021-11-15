@@ -1,132 +1,132 @@
 [
     {
     "name":"1-800-Lawyers",
-    "industry":["legal"],
+    "industry":["legal 1"],
     "ticker": "LAW"
     },
     {
     "name":"Triangle Airlines",
-    "industry":["transport"],
+    "industry":["transport 1"],
     "ticker": "TRI"
     },
     {
     "name":"BigBrother Reconacence",
-    "industry":["tech","defense"],
+    "industry":["tech 1","defense 1"],
     "ticker": "BRO"
     },
     {
     "name":"Johnson In Johnson",
-    "industry":["chemicals"],
+    "industry":["chemicals 1"],
     "ticker": "JOHN"
     },
     {
     "name":"HeadShot Labs",
-    "industry":["defense","mining"],
+    "industry":["defense 1","mining 1"],
     "ticker": "SHOT"
     },
     {
     "name":"Black Hole Drilling Co",
-    "industry":["energy"],
+    "industry":["energy 1"],
     "ticker": "HOLE"
     },
     {
     "name":"HealthCure",
-    "industry":["healthcare"],
+    "industry":["healthcare 1"],
     "ticker": "CURE"
     },
     {
     "name":"DaBeers",
-    "industry":["restaurant", "agriculture"],
+    "industry":["restaurant 1", "agriculture 1"],
     "ticker": "BEER"
     },
     {
     "name":"Black Mist",
-    "industry":["energy"],
+    "industry":["energy 1"],
     "ticker": "BLM"
     },
     {
     "name":"Painless Prescriptions",
-    "industry":["pharma"],
+    "industry":["pharma 1"],
     "ticker": "PAIN"
     },
     {
     "name":"Harpoon Gaming",
-    "industry":["entertainment"],
+    "industry":["entertainment 1"],
     "ticker": "HARP"
     },
     {
     "name":"ExOnMobile",
-    "industry":["tech"],
+    "industry":["tech 1"],
     "ticker": "EOM"
     },
     {
     "name":"One Night Stand",
-    "industry":["tech"],
+    "industry":["tech 1"],
     "ticker": "NITE"
     },
     {
     "name":"Gecko",
-    "industry":["insurance"],
+    "industry":["insurance 1"],
     "ticker": "GCKO"
     },
     {
     "name":"MothBite",
-    "industry":["garments"],
+    "industry":["garments 1"],
     "ticker": "MOTH"
     },
     {
     "name":"Beyond Broke",
-    "industry":["finance"],
+    "industry":["finance 1"],
     "ticker": "BROK"
     },
     {
     "name":"Lease'd Expensive",
-    "industry":["transport"],
+    "industry":["transport 1"],
     "ticker": "LSD"
     },
     {
     "name":"Offshore Accounting",
-    "industry":["finance"],
+    "industry":["finance 1"],
     "ticker": "OFF"
     },
     {
     "name":"OnlyFriends",
-    "industry":["entertainment","tech"],
+    "industry":["entertainment 1","tech 1"],
     "ticker": "ONLY"
     },
     {
     "name":"Cracked Rock Shale",
-    "industry":["energy"],
+    "industry":["energy 1"],
     "ticker": "ROCK"
     },
     {
     "name":"Red Diamond",
-    "industry":["mining"],
+    "industry":["mining 1"],
     "ticker": "RED"
     },
     {
     "name":"Mil-due Farms",
-    "industry":["agriculture"],
+    "industry":["agriculture 1"],
     "ticker": "FARM"
     },
     {
     "name":"Futile Investments",
-    "industry":["finance"],
+    "industry":["finance 1"],
     "ticker": "FTI"
     },
     {
     "name":"GroudBreaking Construction",
-    "industry":["construction"],
+    "industry":["construction 1"],
     "ticker": "GBC"
     },
     {
     "name":"Royal Burger",
-    "industry":["restaurant"],
+    "industry":["restaurant 1"],
     "ticker": "ROY"
     },
     {
     "name":"Double Arch",
-    "industry":["restaurant"],
+    "industry":["restaurant 1"],
     "ticker": "DUB"
     }
 ]

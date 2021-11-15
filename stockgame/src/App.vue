@@ -13,6 +13,13 @@
             <p>Shares: {{ company.stocksOwned }}, Equity: ${{ (company.stocksOwned * company.stockPrice).toFixed(2) }}</p>
             
         </div>
+
+        <!-- <div v-for="industry in industries" :key="industry.id">
+            <p>
+               {{ industry.instance }} {{ industry.name }} {{ (industry.val * 100 - 100).toFixed(2) }}%
+            </p>
+        </div> -->
+
         <div v-for="events in activeEvents" :key="events.id">
             <p> {{ events.headLine }} ({{ events.year }})</p>
         </div>
@@ -47,32 +54,32 @@ export default {
             currentPositiveIndustries: [],
             currentNegativeIndustries: [],
             totalEquity: 0,
-            playerDollars: 100,
+            playerDollars: 100, // initial starting balance
             industries: [
-                {"name": "entertainment", "val": 1}, 
-                {"name": "mining", "val": 1}, 
-                {"name": "tech", "val": 1}, 
-                {"name": "energy", "val": 1},
-                {"name": "garments", "val": 1}, 
-                {"name": "chemicals", "val": 1}, 
-                {"name": "pharma", "val": 1},
-                {"name": "agriculture", "val": 1}, 
-                {"name": "healthcare", "val": 1}, 
-                {"name": "legal", "val": 1},
-                {"name": "insurance", "val": 1}, 
-                {"name": "finance", "val": 1}, 
-                {"name": "transport", "val": 1},
-                {"name": "construction", "val": 1}, 
-                {"name": "restaurant", "val": 1}, 
-                {"name": "defense", "val": 1}]
+                {"name": "entertainment", "val": 1, "instance": 0}, 
+                {"name": "mining", "val": 1, "instance": 0}, 
+                {"name": "tech", "val": 1, "instance": 0}, 
+                {"name": "energy", "val": 1, "instance": 0},
+                {"name": "garments", "val": 1, "instance": 0}, 
+                {"name": "chemicals", "val": 1, "instance": 0}, 
+                {"name": "pharma", "val": 1, "instance": 0},
+                {"name": "agriculture", "val": 1, "instance": 0}, 
+                {"name": "healthcare", "val": 1, "instance": 0}, 
+                {"name": "legal", "val": 1, "instance": 0},
+                {"name": "insurance", "val": 1, "instance": 0}, 
+                {"name": "finance", "val": 1, "instance": 0}, 
+                {"name": "transport", "val": 1, "instance": 0},
+                {"name": "construction", "val": 1, "instance": 0}, 
+                {"name": "restaurant", "val": 1, "instance": 0}, 
+                {"name": "defense", "val": 1, "instance": 0}]
         }
     },
     methods: {
         stockSale(company, buySell) {
             // true = buy, false = sell
             if (buySell) {
-                company.stocksOwned++
-                this.playerDollars -= company.stockPrice
+                company.stocksOwned++;
+                this.playerDollars -= company.stockPrice;
             }
             else {
                 company.stocksOwned--;
@@ -104,13 +111,35 @@ export default {
         computeEffects(eventObject) {
 
             for (let i = 0; i < eventObject.positiveAffectedIndustries.length; i++) {
+
+                let eventInstancePos = eventObject.positiveAffectedIndustries[i].split(' ');
+
                 for (let j = 0; j < this.industries.length; j++) {
-                    if (eventObject.positiveAffectedIndustries[i] === this.industries[j].name) this.industries[j].val *= 1.002 // .2% flux
+
+                    if (eventInstancePos[0] === this.industries[j].name) {
+
+                        for (let k = 0; k < parseInt(eventInstancePos[1]); k++) {
+
+                            this.industries[j].val *= 1.001005 // .105% flux up
+                            this.industries[j].instance++;
+                        }
+                    }
                 }
             }
             for (let i = 0; i < eventObject.negativeAffectedIndustries.length; i++) {
+
+                let eventInstanceNeg = eventObject.negativeAffectedIndustries[i].split(' ');
+
                 for (let j = 0; j < this.industries.length; j++) {
-                    if (eventObject.negativeAffectedIndustries[i] === this.industries[j].name) this.industries[j].val *= 0.998
+
+                    if (eventInstanceNeg[0] === this.industries[j].name) {
+
+                        for (let k = 0; k < parseInt(eventInstanceNeg[1]); k++) {
+
+                            this.industries[j].val *= 0.999 // .1% flux down
+                            this.industries[j].instance--;
+                        }
+                    }
                 }
             }
         },
@@ -140,7 +169,8 @@ export default {
                     companies[i].name, 
                     companies[i].ticker, 
                     companies[i].industry, 
-                    Math.floor((Math.random() * 100)+1)
+                    // Math.floor((Math.random() * 100)+1)
+                    10
                     );
                 this.companyList.push(tempCompany)
                 this.currentCompaniesList.push(tempCompany)     
@@ -168,14 +198,25 @@ export default {
                 let company = this.currentCompaniesList[i];
                 // this.checkUpdateMarket(company); // adding/removing market
                 // check if company added
-                for (let i = 0; i < company.relatedIndustries.length; i++) {
-                    for (let j = 0; j < this.industries.length; j++) {
-                        if (company.relatedIndustries[i] === this.industries[j].name) {
-                            this.stockFluctuate(company, this.industries[j].val)
+                for (let j = 0; j < company.relatedIndustries.length; j++) {
+
+                    let companyInstance = company.relatedIndustries[j].split(' ');
+
+                    for (let k = 0; k < this.industries.length; k++) {
+
+                        if (companyInstance[0] === this.industries[k].name) {
+
+                            for (let l = 0; l < parseInt(companyInstance[1]); l++) {
+
+                                this.stockFluctuate(company, this.industries[k].val)
+                            }
                         }
                     }
                 }
-                this.stockFluctuate(company, 1); // normal random flux TODO: ADD RANDOM FLUX
+
+                let maxRandomFlux = 1.0205; // 2.01% random flux positive
+                let minRandomFlux = 0.98; // 2% random flux negative
+                this.stockFluctuate(company, (Math.random() * (maxRandomFlux - minRandomFlux) + minRandomFlux));
                 
             }
         },
