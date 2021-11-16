@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <Event ref="CallEvent" />
+        <EventParent ref="CallEvent" />
         <p><b>Year: {{ year }}, Time Elapsed: {{ clockTick }}</b></p>
         <p><b>TOTAL: ${{ (playerDollars + totalEquity).toFixed(2) }}</b></p>
         <p>Liquidity: ${{ playerDollars.toFixed(2) }}</p>
@@ -13,7 +13,7 @@
             </p>
             <p>Shares: {{ company.stocksOwned }}, Equity: ${{ (company.stocksOwned * company.stockPrice).toFixed(2) }}</p>
     
-    </div>
+        </div>
 
         <!-- <div v-for="industry in industries" :key="industry.id">
             <p>
@@ -30,14 +30,14 @@ import CompanyObj from './classes/Company.js'
 import companies from './assets/companies.json'
 import industries from './assets/industries.json'
 // import Company from './components/Company.vue'
-import Event from './components/Event.vue'
+import EventParent from './components/EventParent.vue'
 // import PlayerControls from './components/PlayerControls.vue'
 
 export default {
       name: 'App',
       components: {
     //     Company,
-        Event
+        EventParent,
     //     PlayerControls,
       },
     data() {
