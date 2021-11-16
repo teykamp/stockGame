@@ -104,7 +104,7 @@ export default {
                     companies[i].ticker, 
                     companies[i].industry, 
                     // Math.floor((Math.random() * 100)+1)
-                    10
+                    10 // 10 dollar inital stock price, to be replaced with randomly generated stock prices in line above
                     );
                 this.companyList.push(tempCompany)
                 this.currentCompaniesList.push(tempCompany)     
