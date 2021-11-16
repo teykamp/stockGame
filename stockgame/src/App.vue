@@ -5,14 +5,14 @@
         <p><b>TOTAL: ${{ (playerDollars + totalEquity).toFixed(2) }}</b></p>
         <p>Liquidity: ${{ playerDollars.toFixed(2) }}</p>
         <p>Equity: ${{ totalEquity.toFixed(2) }}</p>
+        
         <div v-for="company in currentCompaniesList" :key="company.id">
-            <p>
-                {{ company.ticker }} ${{ company.stockPrice.toFixed(2) }}
-                <button v-if="playerDollars >= company.stockPrice" @click="stockSale(company, true)">Buy</button>
-                <button v-if="company.stocksOwned > 0" @click="stockSale(company, false)">Sell</button>
-            </p>
-            <p>Shares: {{ company.stocksOwned }}, Equity: ${{ (company.stocksOwned * company.stockPrice).toFixed(2) }}</p>
-    
+            <Company 
+                v-bind:company="company"
+                v-bind:playerDollars="playerDollars"
+                v-on:boughtStock="companiesBoughtStock($event)"
+                v-on:soldStock="companiesSoldStock($event)"
+            />
         </div>
 
         <!-- <div v-for="industry in industries" :key="industry.id">
@@ -29,14 +29,14 @@
 import CompanyObj from './classes/Company.js'
 import companies from './assets/companies.json'
 import industries from './assets/industries.json'
-// import Company from './components/Company.vue'
+import Company from './components/Company.vue'
 import EventParent from './components/EventParent.vue'
 // import PlayerControls from './components/PlayerControls.vue'
 
 export default {
       name: 'App',
       components: {
-    //     Company,
+        Company,
         EventParent,
     //     PlayerControls,
       },
@@ -54,34 +54,31 @@ export default {
         }
     },
     methods: {
-        stockSale(company, buySell) {
-            // true = buy, false = sell
-            if (buySell) {
-                company.stocksOwned++;
-                this.playerDollars -= company.stockPrice;
-            }
-            else {
-                company.stocksOwned--;
-                this.playerDollars += company.stockPrice;
-            }
-
+        companiesBoughtStock(stockPrice) {
+            this.playerDollars -= stockPrice;
             this.playerBalance()
         },
-        playerBalance() {
 
+        companiesSoldStock(stockPrice) {
+            this.playerDollars += stockPrice;
+            this.playerBalance()
+        },
+
+        playerBalance() {
+            // called from companies.vue
             this.totalEquity = 0;
             for (let i = 0; i < this.currentCompaniesList.length; i++) {
                 let equity = this.currentCompaniesList[i].stocksOwned * this.currentCompaniesList[i].stockPrice;
                 this.totalEquity += equity;
             }
         },
+
         stockFluctuate(company, flux) {
+            // use company obj methods
             company.stockPrice *= flux;
         },
         
         clock() { // central game clock
-            
-            
             
             if (this.clockTick % 10 === 0) {
                 this.year++;
@@ -144,6 +141,7 @@ export default {
         },
 
         checkUpdateMarket(company) {
+            // broken
             this.currentCompaniesList.filter(company.stockPrice <= 0);
         },
 

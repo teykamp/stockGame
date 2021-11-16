@@ -26,7 +26,5 @@ export default class Company {
     randomFluctuate() {
         return Math.round(1 + Math.random() * (-10)); // algo for randomflux
     }
-
-
-    
+   
 }
