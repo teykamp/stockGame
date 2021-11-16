@@ -133,7 +133,7 @@ export default {
                     }
                 }
 
-                let maxRandomFlux = 1.0205; // 2.01% random flux positive
+                let maxRandomFlux = 1.02; // 2% random flux positive
                 let minRandomFlux = 0.98; // 2% random flux negative
                 this.stockFluctuate(company, (Math.random() * (maxRandomFlux - minRandomFlux) + minRandomFlux));
                 
